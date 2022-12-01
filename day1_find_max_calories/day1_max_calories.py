@@ -54,17 +54,13 @@ def elf_with_max_calories(file_name):
 
 
 def sum_calories(max_calories):
-    sum = 0
-    for i in range(3):
-        sum += max_calories[i]['value']
-
-    return sum
+    return sum(item['value'] for item in max_calories)
 
 
 def print_result(max_calories):
     print("Three elves with the most calories are:")
-    for i in range(3):
-        print(f"{max_calories[i]['value']}, carried by the {max_calories[i]['index']} Elf")
+    for item in max_calories:
+        print(f"{item['value']}, carried by the {item['index']} Elf")
     print(f"Tatal amount of calories is {sum_calories(max_calories)}") 
 
 
